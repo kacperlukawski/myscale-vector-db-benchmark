@@ -45,7 +45,7 @@ class QdrantSearcher(BaseSearcher):
                     limit=top,
                     # We need qdrant to not return structured data payload.
                     with_payload=False,
-                    search_params=rest.SearchParams(
+                    search_params=rest.SearchParams.construct(
                         **generate_search_params(params=cls.search_params.get("params", {}))
                     ),
                 )
